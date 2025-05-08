@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HR Management</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+    }
+    .navbar {
+      background: #222;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar .title {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .navbar nav a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+    }
+    .navbar .search {
+      display: flex;
+    }
+    .navbar input[type="text"] {
+      padding: 5px;
+      border-radius: 3px 0 0 3px;
+      border: none;
+    }
+    .navbar button {
+      padding: 6px 10px;
+      border: none;
+      background: #555;
+      color: white;
+      border-radius: 0 3px 3px 0;
+      cursor: pointer;
+    }
+
+    .container {
+      background: white;
+      margin: 30px auto;
+      padding: 20px;
+      width: 90%;
+      box-shadow: 0 0 5px #aaa;
+      border-radius: 5px;
+    }
+
+    .container h2 {
+      margin-bottom: 10px;
+    }
+
+    .add-btn {
+      float: right;
+      margin-bottom: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+
+    .edit-btn {
+      background-color: #ffc107;
+      border: none;
+      color: white;
+      padding: 6px 10px;
+      margin-right: 5px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+    .delete-btn {
+      background-color: #dc3545;
+      border: none;
+      color: white;
+      padding: 6px 10px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 50%;
+      border-radius: 5px;
+    }
+
+    .modal-content h3 {
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      margin: -20px -20px 20px -20px;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .modal-content input, .modal-content select {
+      width: 48%;
+      padding: 8px;
+      margin: 5px 1%;
+      box-sizing: border-box;
+    }
+
+    .modal-content label {
+      display: inline-block;
+      margin: 5px 1%;
+    }
+
+    .modal-actions {
+      text-align: right;
+      margin-top: 15px;
+    }
+
+    .save-btn {
+      background: #28a745;
+      color: white;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .cancel-btn {
+      background: #6c757d;
+      color: white;
+padding: 8px 14px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="title">HR Management</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="search">
+      <input type="text" placeholder="Search...">
+      <button>Search</button>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <h2>Employee</h2>
+    <button class="add-btn" onclick="document.getElementById('modal').style.display='block'">+ Add</button>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Position</th><th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td><td>Fatima Beatriz</td><td>Fatima Beatriz@gmail.com</td><td>0985674321</td><td>Staff</td>
+          <td><button class="edit-btn">Edit</button><button class="delete-btn">Delete</button></td>
+        </tr>
+        <tr>
+          <td>2</td><td>Gabriel Hanna</td><td>Gabriel Hanna@gmail.com</td><td>0353674231</td><td>Staff</td>
+          <td><button class="edit-btn">Edit</button><button class="delete-btn">Delete</button></td>
+        </tr>
+        <tr>
+          <td>3</td><td>Charles Diya</td><td>Charles Diya@gmail.com</td><td>0347658833</td><td>Staff</td>
+          <td><button class="edit-btn">Edit</button><button class="delete-btn">Delete</button></td>
+        </tr>
+        <tr>
+          <td>4</td><td>Frank Lamdo</td><td>Frank Lamdo@gmail.com</td><td>0975444768</td><td>Manager</td>
+          <td><button class="edit-btn">Edit</button><button class="delete-btn">Delete</button></td>
+        </tr>
+        <tr>
+          <td>5</td><td>Louis Tom</td><td>Louis Tom@gmail.com</td><td>0789568223</td><td>Staff</td>
+          <td><button class="edit-btn">Edit</button><button class="delete-btn">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h3>New Employee</h3>
+      <form>
+        <input type="text" placeholder="Name">
+        <input type="text" placeholder="Email"><br>
+        <input type="text" placeholder="Phone">
+        <select>
+          <option>-- Select Position --</option>
+          <option>Staff</option>
+          <option>Manager</option>
+          <option>CEO</option>
+        </select><br>
+        <label>Sex:</label>
+        <label><input type="radio" name="sex"> Male</label>
+        <label><input type="radio" name="sex"> Female</label><br>
+        <div class="modal-actions">
+          <button type="submit" class="save-btn">Save</button>
+          <button type="button" class="cancel-btn" onclick="document.getElementById('modal').style.display='none'">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
