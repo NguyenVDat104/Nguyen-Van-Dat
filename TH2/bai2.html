@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta charset="UTF-8" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Oleo+Script:wght@700&family=Quicksand:wght@300;500&display=swap"
+    rel="stylesheet" />
+  <!-- <link rel="stylesheet" href="shared.css" /> -->
+  <!-- <link rel="stylesheet" href="styles.css" /> -->
+  <title>Travel Goals</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+
+
+    header {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; 
+}
+
+
+    #page-logo a {
+      font-family: 'Oleo Script', cursive;
+      font-size: 2rem;
+      color: #fcd34d;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #fcd34d;
+    }
+
+    /* HERO */
+    #hero {
+      height: 60vh;
+      background: url('images/ocean.jpg') center/cover no-repeat;
+      position: relative;
+    }
+
+    #hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      color: white;
+    }
+
+    #hero-content h1 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    #hero-content p {
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+
+    #hero-content a {
+      background-color: #ffeb3b;
+      padding: 10px 20px;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    #hero-content a:hover {
+      background-color: #fcd34d;
+    }
+
+    /* HIGHLIGHTS */
+    #highlights {
+      background-color: #d1f7ff;
+      padding: 50px 10%;
+      text-align: center;
+    }
+
+    #highlights h2 {
+      margin-bottom: 40px;
+      font-size: 2rem;
+    }
+
+    #destinations {
+      list-style: none;
+      /* background-color: rgba(0, 0, 0, 0.5); */
+      background-color: transparent;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .destination {
+      background-color: transparent;
+      box-shadow: 0 px 8px rgba(0, 0, 0, 0.9);
+      border-radius: 10px;
+      overflow: hidden;
+      flex: 1;
+      transition: transform 0.3s;
+    }
+
+    .destination:hover {
+      transform: scale(1.05);
+    }
+
+    .destination img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .destination p {
+      padding: 10px;
+      font-size: 1rem;
+    }
+.destination strong {
+color: #00bcd4;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #222;
+      padding: 20px;
+    }
+
+    footer ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    footer img {
+      width: 40px;
+      height: 40px;
+      filter: brightness(0) invert(1);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div id="page-logo">
+      <a href="/index.html">Travel Goals</a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/places.html">Destinations</a></li>
+        <li><a href="">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="hero">
+      <div id="hero-content">
+        <h1>Joe's Travel Page</h1>
+        <p>Let's explore the world together!</p>
+        <a href="/places.html">Discover places</a>
+      </div>
+    </section>
+    <section id="highlights">
+      <h2>Highlights</h2>
+      <ul id="destinations">
+        <li class="destination">
+          <img src="images/miami.jpg" alt="Miami streets on sunny day" />
+          <p>Miami <strong>USA</strong></p>
+        </li>
+        <li class="destination">
+          <img src="images/munich.jpg" alt="Munich stadium in winter" />
+          <p>Munich <strong>Germany</strong></p>
+        </li>
+        <li class="destination">
+          <img src="images/barcelona.jpg" alt="Palm beach in Barcelona" />
+          <p>Barcelona <strong>Spain</strong></p>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <ul>
+      <li>
+        <a href="https://www.instagram.com">
+          <img src="images/insta.png" alt="Instagram logo" /></a>
+      </li>
+      <li>
+        <a href="https://www.facebook.com">
+          <img src="images/facebook.png" alt="Facebook logo" /></a>
+      </li>
+    </ul>
+  </footer>
+</body>
+
+</html>
