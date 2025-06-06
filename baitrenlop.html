@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản lý Học sinh</title>
+  <style>
+    /* .container: căn giữa vùng chứa */
+    .container {
+      width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    /* .form-group: khoảng cách giữa các ô nhập */
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    /* .error-message: dùng để ẩn/hiện thông báo lỗi */
+    .error-message {
+      color: red;
+      font-size: 0.9rem;
+      display: none;
+    }
+
+    /* .notification: style khung thông báo */
+    .notification {
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 4px;
+      display: none; /* Ban đầu ẩn */
+    }
+
+    /* .notification.success: màu nền thông báo thành công */
+    .notification.success {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    /* Style cho bảng */
+    #studentTable {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    /* Đường viền bảng */
+    #studentTable th, #studentTable td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+
+    /* Style cho nút Sửa/Xóa */
+    button {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container"> <!-- Dùng để căn giữa vùng chứa -->
+
+    <h2>Quản lý Học sinh</h2>
+
+    <!-- Form Thêm / Sửa học sinh -->
+    <form id="studentForm"> <!-- Form chính -->
+      <div class="form-group">
+        <label for="fullName">Họ tên:</label>
+        <input type="text" id="fullName" placeholder="Nhập họ tên"> <!-- Ô nhập Họ tên -->
+        <div id="errorFullName" class="error-message"></div> <!-- Hiển thị lỗi Họ tên -->
+      </div>
+
+      <div class="form-group">
+        <label for="className">Lớp:</label>
+        <input type="text" id="className" placeholder="Nhập lớp"> <!-- Ô nhập Lớp -->
+        <div id="errorClassName" class="error-message"></div> <!-- Hiển thị lỗi Lớp -->
+      </div>
+
+      <!-- Các nút xử lý -->
+      <button type="button" id="btnAdd">Thêm Học sinh</button> <!-- Chỉ hiện khi ở chế độ thêm -->
+      <button type="button" id="btnUpdate" style="display: none;">Cập nhật</button> <!-- Chỉ hiện khi sửa -->
+      <button type="button" id="btnCancel" style="display: none;">Hủy</button> <!-- Chỉ hiện khi sửa -->
+    </form>
+
+    <!-- Khu vực thông báo -->
+    <div id="notification" class="notification success"></div> <!-- Dùng để hiển thị thông báo thành công -->
+
+    <!-- Bảng danh sách Học sinh -->
+    <table id="studentTable"> <!-- Bảng học sinh -->
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Họ tên</th>
+          <th>Lớp</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Dòng mẫu có sẵn -->
+        <tr>
+          <td>1</td>
+          <td>Nguyễn Văn A</td>
+          <td>10A1</td>
+          <td>
+            <button class="btn-edit" data-id="1">Sửa</button>
+            <button class="btn-delete" data-id="1">Xóa</button>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Trần Thị B</td>
+          <td>11B2</td>
+          <td>
+            <button class="btn-edit" data-id="2">Sửa</button>
+            <button class="btn-delete" data-id="2">Xóa</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</body>
+</html>
